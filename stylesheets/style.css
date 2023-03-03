@@ -1,7 +1,6 @@
 :root {
 	--main-poll-option-color: rgba(33, 166, 164, 1);
-	/* --main-voted-color: rgb(98, 35, 177); */
-	--main-voted-color: white;
+	--main-voted-color: #B01919;
 	--main-poll-option-hover-color: rgba(10, 146, 144, 1);
 	--main-audio-player-button-color: rgb(193, 28, 28);
 }
@@ -14,15 +13,8 @@ body {
 	background-image: linear-gradient(rgba(0, 0, 0, 70%), rgba(0, 0, 0, 70%)), url("../pictures/background.png");
 	background-size: cover;
 	background-attachment: scroll;
-	background-position: top;
+	background-position: center -100px;
 	background-origin: border-box;
-}
-
-#background {
-	height: min-content;
-	width: auto;
-	max-width: 100%;
-	filter: brightness(30%)
 }
 
 .visible-on-mobile {
@@ -66,64 +58,54 @@ a:hover {
 .poll {
 	box-sizing: content-box;
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 }
 
 .poll-option {
 	border: 0;
+	transition: background-color ease-in-out .3s;
 	position: relative;
 	z-index: 2;
 	border-radius: 40px;
 	display: grid;
 	background-color: var(--main-poll-option-color);
 	grid-template-columns: 50px 1fr;
-	grid-template-rows: 50px;
-	align-items: stretch;
+	/* grid-template-rows: auto; */
+	/* align-items: stretch; */
+	width: 70vw;
 	max-width: 500px;
-	margin: 10px;
+	margin-bottom: 20px;
 }
 
 .poll-option[data-chosen] {
-	outline: 5px solid var(--main-voted-color);
+	background-color: var(--main-voted-color);
+	outline: 5px solid white;
 	outline-offset: 3px;
 }
 
+.poll-option > label {
+	transition: backdrop-filter .2s;
+	border-top-right-radius: 2em;
+	border-bottom-right-radius: 2em;
+}
+
+.poll-option > label:hover {
+	backdrop-filter: brightness(85%);
+}
+
 .poll-option > label > p {
+	display: inline-block;
 	position: relative;
-	z-index: 2;
-	bottom: 43px;
-	left: 5px;
-	display: inline;
-	margin: 0;
-	border: 0;
+	margin: 0.5em;
+}
+
+form > button {
+	cursor: pointer;
 }
 
 input[type="radio"] {
-	appearance: none;
-	transition: color .2s;
-	color: var(--main-poll-option-color);
-	position: relative;
-	z-index: 1;
-	background-color: currentcolor;
-	margin: 0;
-	width: 100%;
-	height: 100%;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 30px;
-}
-
-input[type="radio"]:hover {
-	color: var(--main-poll-option-hover-color);
-}
-
-input[type="radio"]::before {
-	content: "";
-	border-radius: 100px;
-	background-color: #111;
-	transform: scale(0);
-	transition: 120ms transform ease-in-out;
+	display: none;
 }
 
 .vote-button {

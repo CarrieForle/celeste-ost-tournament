@@ -10,8 +10,6 @@ window.addEventListener("load", () => {
 	for (let button of buttonElements) {
 		button.onclick = () => {
 			const btn_audio_path = button.dataset["src"];
-			console.log(btn_audio_path);
-			console.log(audioElement.getAttribute("src"));
 			
 			if (btn_audio_path !== audioElement.getAttribute("src")) {
 				audioElement.src = btn_audio_path;
