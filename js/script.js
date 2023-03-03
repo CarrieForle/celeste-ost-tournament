@@ -34,10 +34,22 @@ for (const [track_path, track_name] of candidates) {
 	btn.type = "button";
 	btn.setAttribute("data-src", track_path);
 	btn.setAttribute("data-state", "pause");
+	btn.setAttribute("aria-label", "Play track");
 	inp.type = "radio";
-	inp.name = "celeste ost";
+	inp.name = "celeste-ost";
 	paragraph.innerHTML = track_name;
+	label.setAttribute("tabindex", "0");
+	label.onkeydown = (e) => { 
+	// https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
+		if (e.isComposing) {
+			return;
+		} else if (e.code === "Enter") {
+			console.log("20");
+			inp.click();
+		}
+	}
 	label.appendChild(paragraph);
+	
 }
 
 let voteBtn = document.createElement("button");
@@ -49,11 +61,6 @@ voteBtn.onclick = (e) => {
 
 window.addEventListener("load", () => {
 	const body = document.body;
-	
-	document.onscroll = () => {
-		body.style.backgroundPosition = `center ${document.scrollingElement.scrollTop * 0.75 - 100}px`;
-	}
-	
 	const pollElement = body.getElementsByClassName("poll")[0];
 	let audioElement = new Audio();
 	audioElement.loop = true;

@@ -1,10 +1,13 @@
 button.audio-play-button {
-	color: var(--main-poll-option-color);
+	color: transparent;
 	border: 10px solid currentcolor;
 	border-top-left-radius: 100%;
 	border-bottom-left-radius: 100%;
-	background-color: currentcolor;
 	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: currentcolor;
+	filter: invert(1);
 	margin: 0;
 }
 
@@ -34,9 +37,10 @@ button.audio-play-button[data-state="play"] {
 	gap: 10px;
 }
 
-#volume-controller:hover {
+#volume-controller:hover, #volume-controller:focus {
 	opacity: 1;
 }
+
 #volume-slider {
 	width: 100%;
 	margin: 0;
