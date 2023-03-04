@@ -1,9 +1,8 @@
 button.audio-play-button {
 	color: transparent;
 	border: 10px solid currentcolor;
-	border-top-left-radius: 100%;
-	border-bottom-left-radius: 100%;
-	cursor: pointer;
+	border-top-left-radius: inherit;
+	border-bottom-left-radius: inherit;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-color: currentcolor;
@@ -53,7 +52,6 @@ button.audio-play-button[data-state="play"] {
 	background: transparent;
 	border: 0;
 	filter: brightness(100%) invert(100%);
-	cursor: pointer;
 	background-image: url("../pictures/volume.svg");
 }
 
@@ -61,8 +59,9 @@ button.audio-play-button[data-state="play"] {
 	background-image: url("../pictures/muted.svg");
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 600px) {
 	#volume-controller {
+		display: none;
 		transform: initial;
 		width: calc(100% - 40px);
 		right: 0;
@@ -75,5 +74,9 @@ button.audio-play-button[data-state="play"] {
 	
 	#volume {
 		transform: initial;
+	}
+	
+	button.audio-play-button {
+		border-width: 4px;
 	}
 }

@@ -54,6 +54,22 @@ window.addEventListener("load", () => {
 		e.stopPropagation();
 	}
 	
+	audioSliderElement.onkeydown = (e) => {
+		if (e.isComposing) return;
+		
+		if (e.code === "ArrowUp" || e.code === "ArrowRight"){
+			audioSliderElement.valueAsNumber += 0.05;
+			e.preventDefault();
+			e.stopPropagation();
+		} else if (e.code === "ArrowDown" || e.code === "ArrowLeft"){
+			audioSliderElement.value -= 0.05;
+			e.preventDefault();
+			e.stopPropagation();
+		}
+		
+		audioElement.volume = audioSliderElement.value;
+	}
+	
 	muteButtonElement.onclick = () => {
 		if (audioElement.volume === 0) {
 			audioElement.volume = audioSliderElement.value;

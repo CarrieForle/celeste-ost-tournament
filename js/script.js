@@ -17,39 +17,31 @@ const candidates = new Map([
 let candidateElements = [];
 let candidateInputs = [];
 
-for (const [track_path, track_name] of candidates) {
+for (const [trackPath, trackName] of candidates) {
 	let div = document.createElement("div");
 	candidateElements.push(div);
-	let btn = document.createElement("button");
-	let label = document.createElement("label");
+	let trackBtn = document.createElement("button");
+	let label = document.createElement("button");
 	let inp = document.createElement("input");
 	candidateInputs.push(inp);
 	let paragraph = document.createElement("p");
-	div.appendChild(btn);
+	div.appendChild(trackBtn);
 	div.appendChild(label);
 	label.appendChild(inp);
 	
 	div.setAttribute("class", "poll-option");
-	btn.setAttribute("class", "audio-play-button");
-	btn.type = "button";
-	btn.setAttribute("data-src", track_path);
-	btn.setAttribute("data-state", "pause");
-	btn.setAttribute("aria-label", "Play track");
+	trackBtn.setAttribute("class", "audio-play-button");
+	trackBtn.type = "button";
+	trackBtn.setAttribute("data-src", trackPath);
+	trackBtn.setAttribute("data-state", "pause");
+	trackBtn.setAttribute("aria-label", "Play track");
 	inp.type = "radio";
 	inp.name = "celeste-ost";
-	paragraph.innerHTML = track_name;
-	label.setAttribute("tabindex", "0");
-	label.onkeydown = (e) => { 
-	// https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
-		if (e.isComposing) {
-			return;
-		} else if (e.code === "Enter") {
-			console.log("20");
-			inp.click();
-		}
-	}
-	label.appendChild(paragraph);
-	
+	paragraph.innerHTML = trackName;
+	// label.setAttribute("tabindex", "0");
+	label.type = "button";
+	label.onclick = () => inp.click();
+	label.appendChild(document.createTextNode(trackName));
 }
 
 let voteBtn = document.createElement("button");
