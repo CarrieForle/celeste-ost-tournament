@@ -1,4 +1,4 @@
-button.audio-play-button {
+.audio-play-button {
 	color: transparent;
 	border: 10px solid currentcolor;
 	border-top-left-radius: inherit;
@@ -10,17 +10,17 @@ button.audio-play-button {
 	margin: 0;
 }
 
-button.audio-play-button[data-state="pause"] {
+.audio-play-button[data-state="pause"] {
 	background-image: url("../pictures/play-button.svg");
 } 
 
-button.audio-play-button[data-state="play"] {
+.audio-play-button[data-state="play"] {
 	background-image: url("../pictures/pause-button.svg");
 } 
 
 #volume-controller {
 	display: grid;
-	grid-template-columns: 50px 1fr;
+	grid-template-columns: 40px 1fr;
 	place-items: center;
 	transform: rotate(-90deg);
 	right: -70px;
@@ -48,7 +48,8 @@ button.audio-play-button[data-state="play"] {
 
 #volume {
 	transform: rotate(90deg);
-	padding: 20px 20px;
+	height: 40px;
+	width: 40px;
 	background: transparent;
 	border: 0;
 	filter: brightness(100%) invert(100%);

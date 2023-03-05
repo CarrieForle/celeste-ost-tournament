@@ -5,7 +5,28 @@
 	--main-audio-player-button-color: rgb(193, 28, 28);
 }
 
+section.faq {
+	width: 70%;
+	padding: 0 15% 0 15%;
+	background-color: rgba(0, 0, 0, .4);
+}
+
+.faq.answer {
+	margin: 0 0 0 20px;
+}
+
+.faq.question {
+	margin: 20px 0 20px 0;
+}
+
+h2.faq {
+	font-size: 72px;
+	text-align: center;
+	margin: 20px 0 20px 0;
+}
+
 body {
+	margin: 0;
 	box-sizing: border-box;
 	color: white;
 	font: 24px sans-serif;
@@ -87,7 +108,7 @@ a:hover {
 	outline-offset: 3px;
 }
 
-.poll-option > button {
+.radio-button {
 	transition: backdrop-filter .2s;
 	color: white;
 	background-color: transparent;
@@ -99,7 +120,7 @@ a:hover {
 	border-bottom-right-radius: inherit;
 }
 
-.poll-option > button:hover {
+.radio-button:hover {
 	backdrop-filter: brightness(85%);
 }
 
@@ -133,5 +154,25 @@ input[type="radio"] {
 	
 	.poll-option {
 		grid-template-columns: 30px 1fr;
+	}
+	
+	section.faq {
+		width: 70%;
+		padding: 0 15% 0 15%;
+		background-color: rgba(0, 0, 0, .4);
+	}
+	
+	h2.faq {
+		font-size: 48px;
+		text-align: center;
+		margin: 20px 0 20px 0;
+	}
+
+	.faq.answer {
+		margin: 0 0 0 10px;
+	}
+
+	.faq.question {
+		margin: 20px 0 20px 0;
 	}
 }

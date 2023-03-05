@@ -21,35 +21,31 @@ for (const [trackPath, trackName] of candidates) {
 	let div = document.createElement("div");
 	candidateElements.push(div);
 	let trackBtn = document.createElement("button");
-	let label = document.createElement("button");
+	let radioBtn = document.createElement("button");
 	let inp = document.createElement("input");
 	candidateInputs.push(inp);
-	let paragraph = document.createElement("p");
 	div.appendChild(trackBtn);
-	div.appendChild(label);
-	label.appendChild(inp);
+	div.appendChild(radioBtn);
+	radioBtn.appendChild(inp);
 	
 	div.setAttribute("class", "poll-option");
 	trackBtn.setAttribute("class", "audio-play-button");
 	trackBtn.type = "button";
 	trackBtn.setAttribute("data-src", trackPath);
 	trackBtn.setAttribute("data-state", "pause");
-	trackBtn.setAttribute("aria-label", "Play track");
+	trackBtn.setAttribute("aria-radioBtn", "Play track");
 	inp.type = "radio";
-	inp.name = "celeste-ost";
-	paragraph.innerHTML = trackName;
-	// label.setAttribute("tabindex", "0");
-	label.type = "button";
-	label.onclick = () => inp.click();
-	label.appendChild(document.createTextNode(trackName));
+	inp.name = "trackname";
+	inp.value = trackName;
+	radioBtn.type = "button";
+	radioBtn.setAttribute("class", "radio-button");
+	radioBtn.onclick = () => inp.click();
+	radioBtn.appendChild(document.createTextNode(trackName));
 }
 
 let voteBtn = document.createElement("button");
 voteBtn.innerHTML = "Submit";
 voteBtn.setAttribute("class", "vote-button");
-voteBtn.onclick = (e) => {
-	console.log(`submit ${e.target.value}`);
-}
 
 window.addEventListener("load", () => {
 	const body = document.body;

@@ -13,9 +13,9 @@
   </head>
   <body>
 	<aside>
-		<label><input type="checkbox"> High Contrast</label>
-		<label><input type="checkbox"> High Contrast</label>
-		<label><input type="checkbox"> High Contrast</label>
+	  <label><input type="checkbox"> High Contrast</label>
+	  <label><input type="checkbox"> High Contrast</label>
+	  <label><input type="checkbox"> High Contrast</label>
 	</aside>
 	<p>
 	  It's best that you've listened to <strong>every</strong> 
@@ -26,7 +26,24 @@
 	</p>
 	<p>Poll doesn't load or this page just suck in general? <a href="https://strawpoll.com/e7ZJGG1mLy3">Vote directly from StrawPoll</a>.
 	<p class="visible-on-mobile">Are you using a phone? You may have a hard time with that. Consider voting on a PC or vote directly from StrawPoll.</p>
-	<form method="post" class="poll" name="celeste-ost" enctype="text/plain"></form>
+	<form method="get" target="_blank" id="celeste-ost" class="poll"></form>
+	<section class="faq">
+	  <h2 class="faq">FAQ</h2>
+	  <div class="faq question">What is this?</div>
+	  <div class="faq answer">This is a Celeste OST elmination tournament by poll. 
+		It is to choose overall the best track in the game.</div>
+	  <div class="faq question">How does it work?</div>
+	  <div class="faq answer">You vote the soundtrack <strong>you like the least.</strong>
+		The one getting the highest votes will be elminated from the later rounds.
+		This event will go on for 43 days. At the end of each day 1 soundtrack is eliminated.
+		The last one remaining is overall the best soundtrack in the game!
+		For technical details <a href="" target="_blank">refer here</a>.
+	  </div>
+	  <div class="faq question">Okay, but why?</div>
+	  <div class="faq answer">Curiosity.</div>
+	  <div class="faq question">I still have questions</div>
+	  <div class="faq answer">DM me on <a href="https://www.reddit.com/user/CarrieForle" target="_blank">Reddit</a>.</div>
+	</section>
 	<div id="volume-controller">
 	  <button id="volume" type="button" aria-label="Muted switch"></button>
 	  <input type="range" min="0" max="1" step="any" value="0.1" id="volume-slider" aria-label="Audio volume slider">
